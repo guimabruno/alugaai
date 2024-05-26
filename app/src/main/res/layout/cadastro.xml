@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icone"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastre-se"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/orange"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        android:text="Dados Pessoais"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        />
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Nome completo"
+        />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:id="@+id/endereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Endereço:"
+        />
+    <EditText
+        android:id="@+id/cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="CPF"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Telefone"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Senha:"
+        android:inputType="textPassword"
+        />
+    <EditText
+        android:id="@+id/confirmSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff6600"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10sp"
+        android:hint="Confirme sua senha:"
+        android:inputType="textPassword"
+        />
+    <Button
+        android:id="@+id/cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:backgroundTint="@color/orange"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        />
+
+
+
+
+
+
+
+
+</LinearLayout>

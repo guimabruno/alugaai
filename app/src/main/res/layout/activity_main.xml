@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:padding="40dp"
     tools:context=".MainActivity"
-    colo
     >
 
     <ImageView
@@ -27,15 +26,15 @@
         android:text="Aluga ai"
         android:layout_gravity="center_horizontal"
         android:textSize="45dp"
-        android:textColor="#ffa500"
+        android:textColor="#ff6600"
         android:textStyle="bold"
-        />
+        tools:ignore="SpUsage" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="aluguel de veiculos"
-        android:textColor="#ffa500"
+        android:textColor="#ff6600"
         android:layout_gravity="center"
         />
     <TextView
@@ -43,44 +42,67 @@
         android:layout_height="wrap_content"
         android:text="Login:"
         android:layout_marginTop="30dp"
-        android:textSize="16"
-        android:textColor="#ffa500"
+        android:textSize="16sp"
+        android:textColor="#ff6600"
         />
 
     <EditText
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFA500"
+        android:backgroundTint="@color/orange"
         android:selectAllOnFocus="false"
         android:singleLine="true"
-        android:textColor="#ffa500" />
+        android:textColor="#ff6600"
+        android:hint="email"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Senha:"
         android:layout_marginTop="30dp"
-        android:textSize="16"
-        android:textColor="#ffa500"
+        android:textSize="16sp"
+        android:textColor="@color/orange"
         />
 
     <EditText
         android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFA500"
+        android:backgroundTint="@color/orange"
         android:selectAllOnFocus="false"
         android:singleLine="true"
-        android:textColor="#ffa500"
+        android:textColor="@color/orange"
+        android:hint="***********"
         />
 
     <Button
+        android:id="@+id/bt_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Entrar"
         android:textStyle="bold"
-        android:backgroundTint="#ffa500"
+        android:backgroundTint="@color/orange"
         android:layout_marginTop="15dp"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ainda não tem cadastro?"
+        android:layout_gravity="center"
+        android:textColor="@color/orange"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/bt_irCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastre-se"
+        android:textSize="20sp"
+        android:backgroundTint="@color/orange"
+        android:layout_gravity="center"
+        />
+
 </LinearLayout>
