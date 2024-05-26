@@ -1,6 +1,8 @@
 package com.example.alugai;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,54 +10,69 @@ import android.widget.EditText;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-
 public class CadastroActivity extends AppCompatActivity {
 
-    private EditText nomeEditText, emailEditText, enderecoEditText, cpfEditText, telefoneEditText, senhaEditText, confirmSenhaEditText;
-    private Button cadastrarButton;
+    private EditText txtNome, txtEmail, txtEndereco, txtCPF, txtTelefone, txtSenha, txtConfSenha;
+    private Button btCadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro);
 
-        nomeEditText = findViewById(R.id.nome);
-        emailEditText = findViewById(R.id.email);
-        enderecoEditText = findViewById(R.id.endereco);
-        cpfEditText = findViewById(R.id.cpf);
-        telefoneEditText = findViewById(R.id.telefone);
-        senhaEditText = findViewById(R.id.senha);
-        confirmSenhaEditText = findViewById(R.id.confirmSenha);
-        cadastrarButton = findViewById(R.id.cadastrar);
+        txtNome = findViewById(R.id.nome);
+        txtEmail = findViewById(R.id.email);
+        txtEndereco = findViewById(R.id.endereco);
+        txtCPF = findViewById(R.id.cpf);
+        txtTelefone = findViewById(R.id.telefone);
+        txtSenha = findViewById(R.id.senha);
+        txtConfSenha = findViewById(R.id.confirmSenha);
+        btCadastro = findViewById(R.id.cadastrar);
 
-
-        cadastrarButton.setOnClickListener(new View.OnClickListener() {
+        btCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nome = nomeEditText.getText().toString();
-                String email = emailEditText.getText().toString();
-                String endereco = enderecoEditText.getText().toString();
-                String cpf = cpfEditText.getText().toString();
-                String telefone = telefoneEditText.getText().toString();
-                String senha = senhaEditText.getText().toString();
-                String confirmSenha = confirmSenhaEditText.getText().toString();
+                String nome = txtNome.getText().toString();
+                String email = txtEmail.getText().toString();
+                String endereco = txtEndereco.getText().toString();
+                String cpf = txtCPF.getText().toString();
+                String telefone = txtTelefone.getText().toString();
+                String senha = txtSenha.getText().toString();
+                String confirmSenha = txtConfSenha.getText().toString();
 
-
-                if (TextUtils.isEmpty(nome) || TextUtils.isEmpty(email) || TextUtils.isEmpty(endereco) ||
-                        TextUtils.isEmpty(cpf) || TextUtils.isEmpty(telefone) || TextUtils.isEmpty(senha) || TextUtils.isEmpty(confirmSenha)) {
-                    Toast.makeText(CadastroActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-                    return;
+                if (validarDados(nome, email, endereco, cpf, telefone, senha, confirmSenha)) {
+                    salvar(nome, email, endereco, cpf, telefone, senha);
                 }
-
-
-                if (!senha.equals(confirmSenha)) {
-                    Toast.makeText(CadastroActivity.this, "As Senhas devem ser iguais", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
             }
         });
     }
-}
 
+    private boolean validarDados(String _nome, String _email, String _endereco, String _cpf, String _telefone, String _senha, String _confirmSenha) {
+        boolean retorno = true;
+
+        if (TextUtils.isEmpty(_nome) || TextUtils.isEmpty(_email) || TextUtils.isEmpty(_endereco) ||
+                TextUtils.isEmpty(_cpf) || TextUtils.isEmpty(_telefone) || TextUtils.isEmpty(_senha) || TextUtils.isEmpty(_confirmSenha)) {
+            Toast.makeText(CadastroActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            retorno = false;
+        }
+
+        if (!_senha.equals(_confirmSenha)) {
+            Toast.makeText(CadastroActivity.this, "As Senhas devem ser iguais", Toast.LENGTH_SHORT).show();
+            retorno = false;
+        }
+
+        return retorno;
+    }
+
+    private void salvar(String _nome, String _email, String _endereco, String _cpf, String _telefone, String _senha) {
+
+        BancoController bd = new BancoController(getBaseContext());
+        String resultado;
+
+        resultado = bd.insereDadosUsuario(_nome, _email, _endereco, _cpf, _telefone, _senha);
+
+        Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(CadastroActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+}
