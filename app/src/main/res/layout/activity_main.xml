@@ -37,14 +37,14 @@
         android:textColor="#ff6600"
         android:layout_gravity="center"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login:"
-        android:layout_marginTop="30dp"
-        android:textSize="16sp"
-        android:textColor="#ff6600"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Login:"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="#ff6600"-->
+<!--        />-->
 
     <EditText
         android:id="@+id/txtLogin"
@@ -54,16 +54,20 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textColor="#ff6600"
-        android:hint="email"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha:"
+        android:hint="E-mail"
+        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:textSize="16sp"
-        android:textColor="@color/orange"
-        />
+        android:textSize="30dp"
+        android:background="@drawable/edittext_border"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Senha:"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/orange"-->
+<!--        />-->
 
     <EditText
         android:id="@+id/txtSenha"
@@ -73,7 +77,11 @@
         android:selectAllOnFocus="false"
         android:singleLine="true"
         android:textColor="@color/orange"
-        android:hint="***********"
+        android:hint="Senha"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:background="@drawable/edittext_border"/>
         />
 
     <Button
@@ -90,7 +98,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ainda não tem cadastro?"
+        android:text="Ainda não tem cadastro?"
         android:layout_gravity="center"
         android:textColor="@color/orange"
         android:layout_marginTop="20dp"

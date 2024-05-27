@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
     tools:context=".Menu">
 
+    <Button
+        android:id="@+id/btMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bem-vindo!"
         android:textSize="24sp"
         android:textColor="#000"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/btMenu"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,6 +32,22 @@
         android:id="@+id/txtMENUser"
         android:textSize="24sp"
         android:textColor="#000"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btAlugue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALUGUE UM CARRO"
+        android:layout_below="@id/txtMENUser"/>
+
+    <Button
+        android:id="@+id/btDisponibilize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DISPONIBILIZE SEU CARRO PARA LOCAÇÃO"
+        android:layout_below="@id/btAlugue"/>
+
+</RelativeLayout>
