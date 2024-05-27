@@ -24,7 +24,9 @@ public class CadastroActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.email);
         txtEndereco = findViewById(R.id.endereco);
         txtCPF = findViewById(R.id.cpf);
+        txtCPF.addTextChangedListener(new MaskTextWatcher(txtCPF, "###.###.###-##"));
         txtTelefone = findViewById(R.id.telefone);
+        txtTelefone.addTextChangedListener(new MaskTextWatcher(txtTelefone, "(##) #####-####"));
         txtSenha = findViewById(R.id.senha);
         txtConfSenha = findViewById(R.id.confirmSenha);
         btCadastro = findViewById(R.id.cadastrar);
