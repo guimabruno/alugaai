@@ -31,20 +31,17 @@ public class CadastroActivity extends AppCompatActivity {
         txtConfSenha = findViewById(R.id.confirmSenha);
         btCadastro = findViewById(R.id.cadastrar);
 
-        btCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nome = txtNome.getText().toString();
-                String email = txtEmail.getText().toString();
-                String endereco = txtEndereco.getText().toString();
-                String cpf = txtCPF.getText().toString();
-                String telefone = txtTelefone.getText().toString();
-                String senha = txtSenha.getText().toString();
-                String confirmSenha = txtConfSenha.getText().toString();
+        btCadastro.setOnClickListener(v -> {
+            String nome = txtNome.getText().toString();
+            String email = txtEmail.getText().toString();
+            String endereco = txtEndereco.getText().toString();
+            String cpf = txtCPF.getText().toString();
+            String telefone = txtTelefone.getText().toString();
+            String senha = txtSenha.getText().toString();
+            String confirmSenha = txtConfSenha.getText().toString();
 
-                if (validarDados(nome, email, endereco, cpf, telefone, senha, confirmSenha)) {
-                    salvar(nome, email, endereco, cpf, telefone, senha);
-                }
+            if (validarDados(nome, email, endereco, cpf, telefone, senha, confirmSenha)) {
+                salvar(nome, email, endereco, cpf, telefone, senha);
             }
         });
     }

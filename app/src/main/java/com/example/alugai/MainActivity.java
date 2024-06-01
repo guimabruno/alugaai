@@ -28,12 +28,18 @@ public class MainActivity extends AppCompatActivity {
         btLOGAcessar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validaDados()) {
+                Cursor dados = validaDados();
+                if (dados != null) {
                     Toast.makeText(getApplicationContext(), "Login com sucesso!", Toast.LENGTH_LONG).show();
                     Intent tela = new Intent(MainActivity.this, Menu.class);
-                    Bundle parametro = new Bundle();
-                    parametro.putString("email", txtLOGEmail.getText().toString());
-                    tela.putExtras(parametro);
+                    Bundle parametros = new Bundle();
+                    parametros.putInt("idUser", dados.getInt(dados.getColumnIndex("idUser")));
+                    parametros.putString("nome", dados.getString(dados.getColumnIndex("nome")));
+                    parametros.putString("email", dados.getString(dados.getColumnIndex("email")));
+                    parametros.putString("endereco", dados.getString(dados.getColumnIndex("endereco")));
+                    parametros.putString("cpf", dados.getString(dados.getColumnIndex("cpf")));
+                    parametros.putString("telefone", dados.getString(dados.getColumnIndex("telefone")));
+                    tela.putExtras(parametros);
                     startActivity(tela);
                 }
             }
@@ -48,30 +54,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validaDados() {
-        String msg = "";
-        String senha = String.valueOf(txtLOGSenha.getText());
-        String login = String.valueOf(txtLOGEmail.getText());
-
-        boolean retorno = true;
+    private Cursor validaDados() {
+        String senha = txtLOGSenha.getText().toString();
+        String login = txtLOGEmail.getText().toString();
 
         if (TextUtils.isEmpty(senha) || TextUtils.isEmpty(login)) {
             Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
-            retorno = false;
+            return null;
         }
 
         BancoController bd = new BancoController(getBaseContext());
-
         Cursor dados = bd.carregaDadosParaLogin(login, senha);
 
-        if (dados.moveToFirst()) {
-            // dados encontrados
-            retorno = true;
+        if (dados != null && dados.moveToFirst()) {
+            return dados; // dados encontrados
         } else {
-            msg = "O usuário não foi encontrado!";
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-            retorno = false;
+            Toast.makeText(getApplicationContext(), "O usuário não foi encontrado!", Toast.LENGTH_LONG).show();
+            return null; // dados não encontrados
         }
-        return retorno;
     }
 }

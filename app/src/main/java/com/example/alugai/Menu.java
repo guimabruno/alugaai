@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Menu extends AppCompatActivity {
-    String email_login = "";
+    String nome, email, endereco, cpf, telefone, senha;
+    int idUser;
     TextView txtMENUser;
 
     Button btAlugue, btDisponibilize, btMenu;
@@ -22,14 +23,20 @@ public class Menu extends AppCompatActivity {
         btAlugue = (Button) findViewById(R.id.btAlugue);
         btDisponibilize = (Button) findViewById(R.id.btDisponibilize);
         btMenu = (Button) findViewById(R.id.btMenu);
+        txtMENUser = (TextView) findViewById(R.id.txtMENUser);
 
         Intent intencao = getIntent();
-        Bundle paramertros = intencao.getExtras();
-        assert paramertros != null;
-        email_login = paramertros.getString("email");
+        Bundle parametros = intencao.getExtras();
+        assert parametros != null;
+        idUser = parametros.getInt("idUser");
+        nome = parametros.getString("nome");
+        email = parametros.getString("email");
+        endereco = parametros.getString("endereco");
+        cpf = parametros.getString("cpf");
+        telefone = parametros.getString("telefone");
+        senha = parametros.getString("senha");
 
-        txtMENUser = (TextView) findViewById(R.id.txtMENUser);
-        txtMENUser.setText("Usuário: " + email_login);
+        txtMENUser.setText("Usuário: " + nome);
 
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
