@@ -17,6 +17,7 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
 
         btAlugue = (Button) findViewById(R.id.btAlugue);
         btDisponibilize = (Button) findViewById(R.id.btDisponibilize);
@@ -24,6 +25,7 @@ public class Menu extends AppCompatActivity {
 
         Intent intencao = getIntent();
         Bundle paramertros = intencao.getExtras();
+        assert paramertros != null;
         email_login = paramertros.getString("email");
 
         txtMENUser = (TextView) findViewById(R.id.txtMENUser);
