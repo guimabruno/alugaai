@@ -51,9 +51,8 @@ public class Menu extends AppCompatActivity {
         btDisponibilize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
-//                Intent intent = new Intent(Menu.this, Extras.class);
-//                startActivity(intent);
+                Intent intent = new Intent(Menu.this, CadVeiculo.class);
+                startActivity(intent);
             }
         });
     }
