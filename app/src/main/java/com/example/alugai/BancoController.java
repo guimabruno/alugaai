@@ -23,6 +23,15 @@ public class BancoController {
         long resultado;
         db = banco.getWritableDatabase();
 
+        // Verifica se o email já existe
+        Cursor cursor = db.query("usuarios", new String[]{"email"}, "email = ?", new String[]{_email}, null, null, null);
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            db.close();
+            return "Erro: O email já está cadastrado!";
+        }
+        cursor.close();
+
         valores = new ContentValues();
         valores.put("nome", _nome);
         valores.put("email", _email);
@@ -30,7 +39,6 @@ public class BancoController {
         valores.put("cpf", _cpf);
         valores.put("telefone", _telefone);
         valores.put("senha", _senha);
-
 
         resultado = db.insert("usuarios", null, valores);
         db.close();
@@ -40,6 +48,7 @@ public class BancoController {
         else
             return "Dados cadastrados com sucesso!";
     }
+
 
     public String insereDadosCarro(int idUser, String marca, String modelo, String cor, String placa, String renavam, Bitmap imagem) {
         ContentValues valores;
