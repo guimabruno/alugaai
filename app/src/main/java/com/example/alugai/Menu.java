@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Menu extends AppCompatActivity {
-    String nome, email, endereco, cpf, telefone, senha;
+    String nome, email, endereco, cpf, telefone;
     int idUser;
     TextView txtMENUser;
 
@@ -34,15 +34,14 @@ public class Menu extends AppCompatActivity {
         endereco = parametros.getString("endereco");
         cpf = parametros.getString("cpf");
         telefone = parametros.getString("telefone");
-        senha = parametros.getString("senha");
 
         txtMENUser.setText("Usuário: " + nome);
 
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, Extras.class);
-                startActivity(intent);
+                Intent tela = new Intent(Menu.this, Extras.class);
+                startActivity(tela);
             }
         });
 
@@ -50,16 +49,23 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO
-//                Intent intent = new Intent(Menu.this, Extras.class);
-//                startActivity(intent);
+//                Intent tela = new Intent(Menu.this, Extras.class);
+//                startActivity(tela);
             }
         });
 
         btDisponibilize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, CadVeiculo.class);
-                startActivity(intent);
+                Intent tela = new Intent(Menu.this, CadVeiculo.class);
+                parametros.putInt("idUser", idUser);
+                parametros.putString("nome", nome);
+                parametros.putString("email", email);
+                parametros.putString("endereco", endereco);
+                parametros.putString("cpf", cpf);
+                parametros.putString("telefone", telefone);
+                tela.putExtras(parametros);
+                startActivity(tela);
             }
         });
     }

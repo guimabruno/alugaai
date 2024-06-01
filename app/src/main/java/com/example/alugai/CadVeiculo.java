@@ -23,6 +23,8 @@ public class CadVeiculo extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
+    String nome, email, endereco, cpf, telefone;
+    int idUser;
     EditText txtMarca, txtModelo, txtCor, txtPlaca, txtRenavam;
     Button btSelImage, btCadastrar;
     ImageView IMGFoto;
@@ -43,13 +45,23 @@ public class CadVeiculo extends AppCompatActivity {
         btSelImage = findViewById(R.id.btSelImage);
         IMGFoto = findViewById(R.id.IMGFoto);
 
+        Intent intencao = getIntent();
+        Bundle parametros = intencao.getExtras();
+        assert parametros != null;
+        idUser = parametros.getInt("idUser");
+        nome = parametros.getString("nome");
+        email = parametros.getString("email");
+        endereco = parametros.getString("endereco");
+        cpf = parametros.getString("cpf");
+        telefone = parametros.getString("telefone");
+
         btSelImage.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(intent, PICK_IMAGE_REQUEST);
+            Intent tela = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(tela, PICK_IMAGE_REQUEST);
         });
 
         btCadastrar.setOnClickListener(v -> {
-            Integer user = 1; // TODO preciso pegar o idUSER na hora do login
+            Integer user = idUser;
             String marca = txtMarca.getText().toString();
             String modelo = txtModelo.getText().toString();
             String cor = txtCor.getText().toString();
@@ -78,8 +90,8 @@ public class CadVeiculo extends AppCompatActivity {
         resultado = bd.insereDadosCarro(user, marca, modelo, cor, placa, renavam, imagem);
 
         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(CadVeiculo.this, Menu.class);
-        startActivity(intent);
+        Intent tela = new Intent(CadVeiculo.this, Menu.class);
+        startActivity(tela);
     }
 
     @Override
