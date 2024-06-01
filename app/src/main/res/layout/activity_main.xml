@@ -80,10 +80,9 @@
         android:hint="Senha"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:inputType="textPassword"
         android:background="@drawable/edittext_border"/>
-        />
 
     <Button
         android:id="@+id/btLogin"
