@@ -96,4 +96,16 @@ public class BancoController {
         db.close();
         return cursor;
     }
-}
+
+    public Cursor consultaCarros() {
+        Cursor cursor;
+        // SELECT idCarro, idUser, marca, modelo, cor, placa, renavam, imagem FROM carros
+        String[] campos = { "idCarro", "idUser", "marca", "modelo", "cor", "placa", "renavam", "imagem" };
+        db = banco.getReadableDatabase();
+        cursor = db.query("veiculos", campos, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }}
