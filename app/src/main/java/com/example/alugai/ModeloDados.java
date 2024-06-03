@@ -1,18 +1,16 @@
 package com.example.alugai;
 
-import android.graphics.Bitmap;
-
 public class ModeloDados {
     int idCarro, idUser;
     String marca, modelo, cor, placa, renavam;
-    Bitmap imagem;
+    byte[] imagem;
 
     // Construtor padrão
     public ModeloDados() {
     }
 
     // Construtor com parâmetros
-    public ModeloDados(int idCarro, int idUser, String marca, String modelo, String cor, String placa, String renavam, Bitmap imagem) {
+    public ModeloDados(int idCarro, int idUser, String marca, String modelo, String cor, String placa, String renavam, byte[] imagem) {
         this.setIdCarro(idCarro);
         this.setIdUser(idUser);
         this.setMarca(marca);
@@ -30,7 +28,7 @@ public class ModeloDados {
     public void setCor(String cor) { this.cor = cor; }
     public void setPlaca(String placa) { this.placa = placa; }
     public void setRenavam(String renavam) { this.renavam = renavam; }
-    public void setImagem(Bitmap imagem) { this.imagem = imagem; }
+    public void setImagem(byte[] imagem) { this.imagem = imagem; }
 
     public int getIdCarro() { return idCarro; }
     public int getIdUser() { return idUser; }
@@ -39,5 +37,5 @@ public class ModeloDados {
     public String getCor() { return cor; }
     public String getPlaca() { return placa; }
     public String getRenavam() { return renavam; }
-    public Bitmap getImagem() { return imagem; }
+    public byte[] getImagem() { return imagem; }
 }

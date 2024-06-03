@@ -62,7 +62,7 @@ public class BancoController {
         valores.put("cor", cor);
         valores.put("placa", placa);
         valores.put("renavam", renavam);
-        valores.put("imagem", getBitmapAsByteArray(imagem));
+        valores.put("imagem", getBitmapAsByteArray(resizeAndCropToSquare(imagem, 500))); // Redimensionando e recortando a imagem antes de convertê-la para byte[]
 
         resultado = db.insert("veiculos", null, valores);
         db.close();
@@ -77,6 +77,22 @@ public class BancoController {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
         return outputStream.toByteArray();
+    }
+
+    // Método para redimensionar e recortar a imagem para um quadrado
+    private Bitmap resizeAndCropToSquare(Bitmap bitmap, int size) {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+
+        int newWidth = size;
+        int newHeight = size;
+
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, newWidth, newHeight, true);
+
+        int cropStartX = (scaledBitmap.getWidth() - size) / 2;
+        int cropStartY = (scaledBitmap.getHeight() - size) / 2;
+
+        return Bitmap.createBitmap(scaledBitmap, cropStartX, cropStartY, size, size);
     }
 
 

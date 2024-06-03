@@ -3,14 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:backgroundTint="#ff6600"
+    android:background="@drawable/edittext_border"
     android:padding="5sp">
     <ImageView
         android:id="@+id/IMGFoto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,24 +20,31 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="idCarro:" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtidCarro" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:textColor="@color/orange">
+
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:text="idUser:" />
+            
+            android:text="idUser:"
+            android:textColor="@color/orange" />
+
         <TextView
+            android:id="@+id/txtidUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtidUser" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,6 +53,7 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="marca:" />
         <TextView
             android:layout_width="wrap_content"
@@ -57,6 +67,7 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="modelo:" />
         <TextView
             android:layout_width="wrap_content"
@@ -70,6 +81,7 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="cor:" />
         <TextView
             android:layout_width="wrap_content"
@@ -83,6 +95,7 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="placa:" />
         <TextView
             android:layout_width="wrap_content"
@@ -96,10 +109,19 @@
         <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
             android:text="renavam:" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtrenavam" />
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eu quero"
+        android:backgroundTint="@color/orange"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        />
 </LinearLayout>

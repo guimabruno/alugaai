@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class CriaBanco extends SQLiteOpenHelper {
 
     private static final String NOME_BANCO = "alugaAI.db";
-    private static final int VERSAO = 2;
+    private static final int VERSAO = 3;
     public CriaBanco(Context context) {
         super(context, NOME_BANCO, null, VERSAO);
     }

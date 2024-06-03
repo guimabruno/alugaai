@@ -1,6 +1,8 @@
 package com.example.alugai;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ public class CarroAdapter extends ArrayAdapter<ModeloDados> {
         this.listaCarros = listaCarros;
         this.context = context;
     }
+    @Override
     public View getView(int position, View view, ViewGroup parent) {
         ModeloDados carro = listaCarros.get(position);
 
@@ -37,7 +40,12 @@ public class CarroAdapter extends ArrayAdapter<ModeloDados> {
         TextView txtplaca = (TextView) view.findViewById(R.id.txtplaca);
         TextView txtrenavam = (TextView) view.findViewById(R.id.txtrenavam);
 
-        IMGFoto.setImageBitmap(carro.getImagem());
+        //IMGFoto.setImageBitmap(carro.getImagem());
+
+        byte[] imagemBytes = carro.getImagem();
+        Bitmap IMGConvertida = BitmapFactory.decodeByteArray(imagemBytes, 0, imagemBytes.length);
+        IMGFoto.setImageBitmap(IMGConvertida);
+
         txtidCarro.setText(String.valueOf(carro.getIdCarro()));
         txtidUser.setText(String.valueOf(carro.getIdUser()));
         txtmarca.setText(String.valueOf(carro.getMarca()));
