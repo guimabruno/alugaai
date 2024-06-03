@@ -48,9 +48,15 @@ public class Menu extends AppCompatActivity {
         btAlugue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
-//                Intent tela = new Intent(Menu.this, Extras.class);
-//                startActivity(tela);
+                Intent tela = new Intent(Menu.this, Consulta_lista.class);
+                parametros.putInt("idUser", idUser);
+                parametros.putString("nome", nome);
+                parametros.putString("email", email);
+                parametros.putString("endereco", endereco);
+                parametros.putString("cpf", cpf);
+                parametros.putString("telefone", telefone);
+                tela.putExtras(parametros);
+                startActivity(tela);
             }
         });
 
