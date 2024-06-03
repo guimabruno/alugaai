@@ -23,7 +23,8 @@ public class CadVeiculo extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    String nome, email, endereco, cpf, telefone;
+    public String nome, email, endereco, cpf, telefone;
+    public Bundle parametros;
     int idUser;
     EditText txtMarca, txtModelo, txtCor, txtPlaca, txtRenavam;
     Button btSelImage, btCadastrar;
@@ -46,7 +47,7 @@ public class CadVeiculo extends AppCompatActivity {
         IMGFoto = findViewById(R.id.IMGFoto);
 
         Intent intencao = getIntent();
-        Bundle parametros = intencao.getExtras();
+        parametros = intencao.getExtras();
         assert parametros != null;
         idUser = parametros.getInt("idUser");
         nome = parametros.getString("nome");
@@ -90,7 +91,14 @@ public class CadVeiculo extends AppCompatActivity {
         resultado = bd.insereDadosCarro(user, marca, modelo, cor, placa, renavam, imagem);
 
         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-        Intent tela = new Intent(CadVeiculo.this, Menu.class);
+        Intent tela = new Intent(this, Menu.class);
+        parametros.putInt("idUser", idUser);
+        parametros.putString("nome", nome);
+        parametros.putString("email", email);
+        parametros.putString("endereco", endereco);
+        parametros.putString("cpf", cpf);
+        parametros.putString("telefone", telefone);
+        tela.putExtras(parametros);
         startActivity(tela);
     }
 
