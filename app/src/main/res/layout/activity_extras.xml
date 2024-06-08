@@ -1,52 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
-    tools:context=".Menu">
+    tools:context=".Extras">
+
+<!--    <Button-->
+<!--        android:id="@+id/btMenu"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="MENU"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:backgroundTint="@color/orange"/>-->
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:id="@+id/logo_icone"
+        android:src="@drawable/icone"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"/>
+<!--        android:layout_below="@id/btMenu"-->
+
 
     <TextView
+        android:id="@+id/textViewAlugaAi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo!"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginBottom="20dp"/>
-
+        android:text="Aluga ai"
+        android:layout_below="@id/logo_icone"
+        android:layout_centerHorizontal="true"
+        android:textSize="45dp"
+        android:textColor="#ff6600"
+        android:textStyle="bold"
+        tools:ignore="SpUsage" />
     <TextView
+        android:id="@+id/textViewAluga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtMENUser"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginBottom="20dp"/>
+        android:layout_below="@id/textViewAlugaAi"
+        android:layout_centerHorizontal="true"
+        android:text="aluguel de veiculos"
+        android:layout_marginBottom="60dp"
+        android:textColor="#ff6600"
+        android:layout_gravity="center"
+        />
 
     <Button
         android:id="@+id/btMeusCarros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MEUS CARROS" />
+        android:layout_below="@id/textViewAluga"
+        android:text="MEUS CARROS"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"/>
 
     <Button
         android:id="@+id/btHistContratos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HISTÓRICO DE CONTRATOS" />
+        android:layout_below="@id/btMeusCarros"
+        android:text="HISTÓRICO DE CONTRATOS"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"/>
 
     <Button
         android:id="@+id/btMensagens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MENSAGENS" />
+        android:layout_below="@id/btHistContratos"
+        android:text="MENSAGENS"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"/>
 
     <Button
         android:id="@+id/btCarteira"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CARTEIRA" />
+        android:layout_below="@id/btMensagens"
+        android:text="CARTEIRA"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"/>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/btVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/button_voltar"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
