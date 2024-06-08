@@ -45,27 +45,17 @@
         android:layout_below="@id/textViewAlugaAi"
         android:layout_centerHorizontal="true"
         android:text="aluguel de veiculos"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="60dp"
         android:textColor="#ff6600"
         android:layout_gravity="center"
         />
-
-    <TextView
-        android:id="@+id/txtMENUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginBottom="20dp"
-        android:layout_below="@id/textViewAluga"
-        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btAlugue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ALUGUE UM CARRO"
-        android:layout_below="@id/txtMENUser"
+        android:layout_below="@id/textViewAluga"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:backgroundTint="@color/orange"
@@ -86,8 +76,8 @@
         android:id="@+id/btSair"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/btDisponibilize"
-        android:layout_marginTop="228dp"
-        android:src="@drawable/button_sair" />
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/button_sair"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>
