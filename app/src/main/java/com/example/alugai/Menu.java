@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Menu extends AppCompatActivity {
     String nome, email, endereco, cpf, telefone;
     int idUser;
     TextView txtMENUser;
+
+    ImageView btSair;
 
     Button btAlugue, btDisponibilize, btMenu;
 
@@ -24,6 +27,7 @@ public class Menu extends AppCompatActivity {
         btDisponibilize = (Button) findViewById(R.id.btDisponibilize);
         btMenu = (Button) findViewById(R.id.btMenu);
         txtMENUser = (TextView) findViewById(R.id.txtMENUser);
+        btSair = (ImageView) findViewById(R.id.btSair);
 
         Intent intencao = getIntent();
         Bundle parametros = intencao.getExtras();
@@ -74,5 +78,14 @@ public class Menu extends AppCompatActivity {
                 startActivity(tela);
             }
         });
+
+        btSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

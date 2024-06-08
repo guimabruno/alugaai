@@ -13,27 +13,51 @@
         android:layout_height="wrap_content"
         android:text="MENU"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bem-vindo!"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginBottom="20dp"
+    <ImageView
+        android:id="@+id/logo_icone"
+        android:src="@drawable/icone"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@id/btMenu"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
+        android:id="@+id/textViewAlugaAi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Aluga ai"
+        android:layout_below="@id/logo_icone"
+        android:layout_centerHorizontal="true"
+        android:textSize="45dp"
+        android:textColor="#ff6600"
+        android:textStyle="bold"
+        tools:ignore="SpUsage" />
+    <TextView
+        android:id="@+id/textViewAluga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewAlugaAi"
+        android:layout_centerHorizontal="true"
+        android:text="aluguel de veiculos"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ff6600"
+        android:layout_gravity="center"
+        />
+
+    <TextView
         android:id="@+id/txtMENUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textColor="#000"
         android:layout_marginBottom="20dp"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/textViewAluga"
         android:layout_centerHorizontal="true"/>
 
     <Button
@@ -41,13 +65,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ALUGUE UM CARRO"
-        android:layout_below="@id/txtMENUser"/>
+        android:layout_below="@id/txtMENUser"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"
+        />
 
     <Button
         android:id="@+id/btDisponibilize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DISPONIBILIZE SEU CARRO PARA LOCAÇÃO"
-        android:layout_below="@id/btAlugue"/>
+        android:layout_below="@id/btAlugue"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"
+        />
+
+    <ImageView
+        android:id="@+id/btSair"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btDisponibilize"
+        android:layout_marginTop="228dp"
+        android:src="@drawable/button_sair" />
 
 </RelativeLayout>
