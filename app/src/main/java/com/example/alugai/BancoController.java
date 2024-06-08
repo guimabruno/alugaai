@@ -113,6 +113,22 @@ public class BancoController {
         return cursor;
     }
 
+    public Cursor carregaDados(String _login) {
+        Cursor cursor;
+        // SELECT idUser, nome, email, endereco, cpf, telefone, senha FROM usuarios WHERE email = 'digitado'
+        String[] campos = { "idUser", "nome", "email", "endereco", "cpf", "telefone", "senha" };
+        String where = "email= '" + _login + "'";
+        db = banco.getReadableDatabase();
+        cursor = db.query("usuarios", campos, where, null, null, null,
+                null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+    }
+
     public Cursor consultaCarros() {
         Cursor cursor;
         // SELECT idCarro, idUser, marca, modelo, cor, placa, renavam, imagem FROM carros
