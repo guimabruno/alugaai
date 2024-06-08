@@ -124,11 +124,12 @@
         android:layout_marginTop="30sp"
         />
 
-
-
-
-
-
+    <ImageView
+        android:id="@+id/btVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50sp"
+        android:src="@drawable/button_voltar" />
 
 
 </LinearLayout>

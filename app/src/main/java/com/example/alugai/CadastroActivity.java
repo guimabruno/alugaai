@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText txtNome, txtEmail, txtEndereco, txtCPF, txtTelefone, txtSenha, txtConfSenha;
     private Button btCadastro;
+
+    private ImageView btVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,12 @@ public class CadastroActivity extends AppCompatActivity {
         txtSenha = findViewById(R.id.senha);
         txtConfSenha = findViewById(R.id.confirmSenha);
         btCadastro = findViewById(R.id.cadastrar);
+        btVoltar = findViewById(R.id.btVoltar);
+
+        btVoltar.setOnClickListener(v -> {
+            Intent intent = new Intent(CadastroActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         btCadastro.setOnClickListener(v -> {
             String nome = txtNome.getText().toString();
