@@ -105,8 +105,9 @@
 
         <ImageView
             android:id="@+id/IMGFoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:adjustViewBounds="true"
             android:contentDescription="Imagem selecionada"
@@ -116,7 +117,7 @@
             android:id="@+id/btCadastrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
+            android:text="Publicar Anúncio"
             android:backgroundTint="@color/orange"
             android:layout_gravity="center"
             android:layout_marginTop="30sp"
