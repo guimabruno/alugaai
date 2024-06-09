@@ -29,13 +29,21 @@ public class Menu extends AppCompatActivity {
 
         Intent intencao = getIntent();
         Bundle parametros = intencao.getExtras();
-        assert parametros != null;
-        idUser = parametros.getInt("idUser");
-        nome = parametros.getString("nome");
-        email = parametros.getString("email");
-        endereco = parametros.getString("endereco");
-        cpf = parametros.getString("cpf");
-        telefone = parametros.getString("telefone");
+        if (parametros != null && parametros.containsKey("idUser")) {
+            idUser = parametros.getInt("idUser");
+            nome = parametros.getString("nome");
+            email = parametros.getString("email");
+            endereco = parametros.getString("endereco");
+            cpf = parametros.getString("cpf");
+            telefone = parametros.getString("telefone");
+        } else {
+            idUser = 0; // Valor indicando que o usuário não foi passado.
+            nome = "";
+            email = "";
+            endereco = "";
+            cpf = "";
+            telefone = "";
+        }
 
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
